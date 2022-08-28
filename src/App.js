@@ -6,7 +6,7 @@ import { Container } from "./components/styles/Container.styled";
 const theme = {
   colors: {
     header: "#ebfbff",
-    body: "#fff",
+    body: "#000",
     footer: "#003333",
   },
 };

@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 *{box-sizing:border-box;}
 body{
-    background:#fff;
+    background:${({ theme }) => theme.colors.body};
     color:red;
     font-family:'Poppins',sans-serif;
     font-size:1.15em;
