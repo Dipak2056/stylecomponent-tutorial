@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Getting started with Styled component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## setup
 
-## Available Scripts
+1. npm i styled-components
+2. create seperate folder for styled components
 
-In the project directory, you can run:
+## how to make simple styled components
 
-### `npm start`
+1. in the file
+2. import styled from 'styled-components'
+3. export const {element} = styled.{HTML}`Your css`
+4. import wherever necessary and use it.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## how to create theme
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Define theme in App.js
+2. import ThemeProvider and wrap everything
+3. pass that defined theme as a props to themeProvider
 
-### `npm test`
+## how to create Global style
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. To create Global style
+2. in the component folder create Global.styled.component.js
+3. in that file import createGlobalStyle from 'styled-components';
+4. create and export GlobalStyleComponent as
+   const GlobalStyle = createGlobalStyle`your css`
+5. import at the top of rootlevel file i.e. app.js
 
-### `npm run build`
+## can we nest?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Yes, we can nest the style of the element like we can do in SASS;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## can we pass the props?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Yes, we can pass the props from the components and we can execute it in the styled component
+for example `<StyledHeader bg="red"> <h1>hubble</h1> </StyledHeader>` props is passed as bg='red'
+now in the styled component we can access this red value as
+`export const StyledHeader = styled.header`
+background-color: ${({ bg }) => bg};
+padding: 40px 0;
+`;`
